@@ -5,6 +5,7 @@ import { ControlledComponent } from './components/ControlledComponent'
 import CounterClass from './components/CounterClass'
 import { CounterFunctional } from './components/CounterFunctional'
 import { useCallback } from 'react'
+import { Form } from './components/form/Form'
 
 function App() {
 
@@ -41,7 +42,8 @@ function App() {
 
   return (
     <>
-      <Card cardInfo={cardInfo} addReview={handleReviewd} callBackFunction={callback} />
+      {/* <Card cardInfo={cardInfo} addReview={handleReviewd} callBackFunction={callback} /> */}
+      <Form />
     </>
   )
 }
