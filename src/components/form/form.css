@@ -118,3 +118,14 @@
 .signupBtn:hover {
     background-color: #333;
 }
+
+.error {
+    color: red;
+    font-size: 0.7rem;
+    align-self: flex-end;
+}
+
+.form div {
+    transition: height 0.5s;
+    interpolate-size: allow-keywords;
+}
