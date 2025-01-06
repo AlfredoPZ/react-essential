@@ -1,0 +1,15 @@
+.list-products {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+

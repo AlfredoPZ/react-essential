@@ -1,0 +1,85 @@
+.card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    /* max-height: 400px; */
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    position: relative;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.img-container .category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.card-content {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.price {
+    font-size: 18px;
+
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    white-space: wrap;
+}
+
+.btnRemove {
+    background-color: #c1121f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnRemove:hover {
+    background-color: #ff0000;
+}
+
+.btnAdd {
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnAdd:hover {
+    background-color: #0096b7;
+}

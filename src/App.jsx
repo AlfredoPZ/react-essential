@@ -1,12 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import Card from './components/Card/Card'
-import { ControlledComponent } from './components/ControlledComponent'
-import CounterClass from './components/CounterClass'
-import { CounterFunctional } from './components/CounterFunctional'
 import { useCallback } from 'react'
-import { Form } from './components/form/Form'
-import Catalog from './components/lists/Catalog'
+import Store from './components/store/Store'
 
 function App() {
 
@@ -43,9 +38,7 @@ function App() {
 
   return (
     <>
-      {/* <Card cardInfo={cardInfo} addReview={handleReviewd} callBackFunction={callback} /> */}
-      {/* <Form /> */}
-      <Catalog />
+      <Store />
     </>
   )
 }
