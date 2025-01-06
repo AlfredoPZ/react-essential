@@ -1,41 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
 import './store.css';
 import Product from './Product';
 import CartProduct from './CartProduct';
+import { DataContext } from '../../util/DataContext';
 
 const Store = () => {
-    const [products, setProducts] = useState();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        fetch('https://api.escuelajs.co/api/v1/products')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Error en la petición');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                setProducts(data);
-                console.log(data[0].images);
-            })
-            .catch((error) => {
-                setError(error);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-    }, []);
-
-    if (loading) {
-        return <h1>Cargando...</h1>
-    }
-
-    if (error) {
-        return <h1>Error: {error.message}</h1>
-    }
+    const {data, cart} = useContext(DataContext);
 
     return (
         <>
@@ -43,15 +14,16 @@ const Store = () => {
             <div className='main'>
                 <section className='list-products'>
                     {
-                        products.map((product, index) => (
+                        data.map((product, index) => (
                             <Product key={product.id} product={product} />
                         ))
                     } 
                 </section>
                 <aside className='cart'>
                     <h2>Carrito</h2>
+                    { cart.length === 0 ? <p>No hay productos en el carrito</p> : null }
                     {
-                        products.map((product, index) => (
+                        cart.map((product, index) => (
                             <CartProduct key={product.id} product={product} />
                         ))
                     } 

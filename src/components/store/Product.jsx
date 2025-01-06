@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './product.css'
+import { DataContext } from '../../util/DataContext';
 
 const Product = ({product}) => {
     const {title, category, description, price} = product;
-    console.log(product.images[0]);
+    const {setCart, cart} = useContext(DataContext);
+
+    const addProduct = () => {
+        setCart([...cart, product]);
+    }
+
     return (
         <article className='card'>
             <div className='img-container'>
@@ -13,7 +19,7 @@ const Product = ({product}) => {
             <div className='card-content'>
                 <h2>{title}</h2>
                 <p className='price'>${price}</p>
-                <button className='btnAdd'>Add to cart</button>
+                <button className='btnAdd' onClick={addProduct}>Add to cart</button>
             </div>
         </article>
     )

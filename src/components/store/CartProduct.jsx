@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './product.css'
+import { DataContext } from '../../util/DataContext';
 
 const CartProduct = ({product}) => {
     const {title, category, description, price} = product;
-    console.log(product.images[0]);
+    const {setCart, cart} = useContext(DataContext);
+
+    const removeProduct = () => {
+        const newCart = cart.filter(item => item.id !== product.id);
+        setCart(newCart);
+    }
+
     return (
         <article className='card'>
             <div className='img-container'>
@@ -13,7 +20,7 @@ const CartProduct = ({product}) => {
             <div className='card-content'>
                 <h2>{title}</h2>
                 <p className='price'>${price}</p>
-                <button className='btnRemove'>Remove</button>
+                <button className='btnRemove' onClick={removeProduct} >Remove</button>
             </div>
         </article>
     )
