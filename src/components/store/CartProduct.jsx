@@ -14,7 +14,7 @@ const CartProduct = ({product}) => {
     return (
         <article className='card'>
             <div className='img-container'>
-                <img src={product.images[0].toString() && "https://images.pexels.com/photos/30052232/pexels-photo-30052232/free-photo-of-campo-de-trigo-verde-exuberante-meciendose-con-la-brisa.jpeg?auto=compress&cs=tinysrgb&w=600"} alt={title} />
+                <img src={JSON.parse(product.images)[0] } alt={title} />
                 <span className='category'>{category.name}</span>
             </div>
             <div className='card-content'>

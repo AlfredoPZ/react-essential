@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { useCallback } from 'react'
 import Store from './components/store/Store'
+import { DataProvider } from './util/DataContext'
 
 function App() {
 
@@ -37,9 +38,9 @@ function App() {
 
 
   return (
-    <>
+    <DataProvider>
       <Store />
-    </>
+    </DataProvider>
   )
 }
 
